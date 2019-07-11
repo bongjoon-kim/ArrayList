@@ -28,7 +28,10 @@ public class Main {
 		arr.addLast(30);
 		arr.addLast(40);	
 		
-		System.out.println("size : " + arr.size());
+		System.out.println("toString : " + arr.toString());
+		
+		arr.remove(5);
+		System.out.println("toString : " + arr.toString());
 	}
 
 }

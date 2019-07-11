@@ -35,6 +35,23 @@ public class ArrayList {
 		return true;
 	}
 	
+	public Object remove(int index) {
+		Object remove = elementData[index];
+		for (int i = index; i < size - 1; i++) {
+			elementData[i] = elementData[i+1];
+		}
+		size--;
+		return remove;
+	}
+	
+	public Object removeFirst(){
+	    return remove(0);
+	}
+	 
+	public Object removeLast(){
+	    return remove(size-1);
+	}	
+	
 	public Object get(int index) {
 		return elementData[index];
 	}
