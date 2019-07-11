@@ -1,7 +1,7 @@
 package Arrayist;
 
 public class ArrayList {
-	private Object[] elements = new Object[100];
+	private Object[] elementData = new Object[100];
 	private int size = 0;
 	
 	public boolean addFirst(Object e) {
@@ -17,15 +17,15 @@ public class ArrayList {
 	
 	public boolean add(int index, Object e) {
 		for (int i = (size - 1) ; i >= index; i--) {
-			elements[i + 1] = elements[i];
+			elementData[i + 1] = elementData[i];
 		}
-		elements[index] = e;
+		elementData[index] = e;
 		size++;
 		return true;
 	}	
 	
 	public void allPrint() {
-		for(Object e: elements) {
+		for(Object e: elementData) {
 			if (e != null)
 				System.out.println(e);
 		}
