@@ -1,4 +1,4 @@
-package Arrayist;
+package ArrayList;
 
 public class ArrayList {
 	private Object[] elementData = new Object[10];
