@@ -13,9 +13,22 @@ public class Main {
 		arr.add(4, 35);
 		
 		arr.addFirst(5);
-		arr.addFirst(4);
+		
+		System.out.println(arr.get(1));
+		System.out.println(arr.get(5));
 
-		arr.allPrint();
+		System.out.println("toString : " + arr.toString());
+		
+		System.out.println("size : " + arr.size());
+		
+		System.out.println("indexOf : " + arr.indexOf(7));
+		
+		arr.addLast(10);
+		arr.addLast(20);
+		arr.addLast(30);
+		arr.addLast(40);	
+		
+		System.out.println("size : " + arr.size());
 	}
 
 }

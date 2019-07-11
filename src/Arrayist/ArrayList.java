@@ -1,33 +1,66 @@
 package Arrayist;
 
 public class ArrayList {
-	private Object[] elementData = new Object[100];
+	private Object[] elementData = new Object[10];
 	private int size = 0;
+	
+	public void extendArray() {
+		if (elementData.length == size) {
+			Object[] ed = elementData;
+			elementData = new Object[size + 10];
+			for(int i = 0; i < size; i++) {
+				elementData[i] = ed[i]; 
+			}
+		}
+	}
 	
 	public boolean addFirst(Object e) {
 		return add(0, e);
 	}
 	
 	public boolean addLast(Object e) {
-//		elements[size] = e;
-//		size++;
-//		return true;
-		return add(size, e);
+		extendArray();
+		elementData[size] = e;
+		size++;
+		return true;
 	}
 	
 	public boolean add(int index, Object e) {
+		extendArray();
 		for (int i = (size - 1) ; i >= index; i--) {
 			elementData[i + 1] = elementData[i];
 		}
 		elementData[index] = e;
 		size++;
 		return true;
+	}
+	
+	public Object get(int index) {
+		return elementData[index];
+	}
+	
+	public int size() {
+		return size;
+	}
+	
+	public int indexOf(Object e) {
+		for (int i = 0; i < size; i++) {
+			if(e.equals(elementData[i])) {
+				return i;
+			}
+		}
+		return -1;
 	}	
 	
-	public void allPrint() {
-		for(Object e: elementData) {
-			if (e != null)
-				System.out.println(e);
+	public String toString() {
+		String str = "[";
+		for(int i=0; i < size; i++) {
+			str += elementData[i];
+			if (i < size - 1)
+				str += ",";
 		}
+		str += "]";
+		return str;
 	}
+
 }
