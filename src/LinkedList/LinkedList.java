@@ -40,16 +40,33 @@ public class LinkedList {
 		}
 	}
 	
-	public void add(int index, Object input) {
-		Node newNode = new Node(input);
-		Node curNode = head;
-		Node nextNode = null;
+	//강의	
+	public void add(int k, Object input) {
+		if(k == 0) {
+			addFirst(input);
+		} else {
+			Node temp1 = node(k - 1);
+			Node newNode = new Node(input);
+			newNode.next = temp1.next;
+			temp1.next = newNode;
+			size++;
+			if(newNode.next == null) {
+				tail = newNode;
+			}
+		}
+	}
+	
+	//강의안보고 만든거
+	public void add2(int index, Object input) {
 		if(size == 0 || index == 0) {
 			addFirst(input);
 		} else if(index >= size) {
 			addLast(input);
 		} else {
-			for (int i = 1; i < index; i++) {
+			Node newNode = new Node(input);
+			Node curNode = head;
+			Node nextNode = null;
+			for (int i = 0; i < index - 1; i++) {
 				nextNode = curNode.next;
 				curNode = nextNode;
 			}
@@ -70,6 +87,14 @@ public class LinkedList {
 			curNode = nextNode;
 		}
 		return curNode.toString();
+	}
+	
+	Node node(int index) {
+		Node x = head;
+		for (int i = 0; i < index; i++) {
+			x = x.next;
+		}
+		return x;
 	}
 	
 	public void allPrint() {
