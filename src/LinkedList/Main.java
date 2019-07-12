@@ -12,6 +12,7 @@ public class Main {
 		//numbers.add2(2,25);
 		numbers.add(2,25);
 		
+		System.out.println(numbers);
 		numbers.allPrint();
 	}
 
