@@ -40,6 +40,14 @@ public class LinkedList {
 		}
 	}
 	
+	Node node(int index) {
+		Node x = head;
+		for (int i = 0; i < index; i++) {
+			x = x.next;
+		}
+		return x;
+	}
+	
 	//강의	
 	public void add(int k, Object input) {
 		if(k == 0) {
@@ -88,14 +96,7 @@ public class LinkedList {
 		}
 		return curNode.toString();
 	}
-	
-	Node node(int index) {
-		Node x = head;
-		for (int i = 0; i < index; i++) {
-			x = x.next;
-		}
-		return x;
-	}
+
 	
 	public void allPrint() {
 		System.out.print("[");
